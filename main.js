@@ -38,6 +38,17 @@ function playGame(playerMove){
             result = 'You lose!'
         }
     }
+
+    const resultElement = document.querySelector('.result');
+    resultElement.textContent = result;
+    resultElement.classList.remove('result-win', 'result-lose', 'result-tie');
+    if (result === 'You win!') {
+        resultElement.classList.add('result-win');
+    } else if (result === 'You lose!') {
+        resultElement.classList.add('result-lose');
+    } else {
+        resultElement.classList.add('result-tie');
+    }
     
 
     //score
