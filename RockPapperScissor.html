@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content-wrap">
+        <h4>Rock Papper Scissors</h4>
+        <div class="playBtn">
+            <button onclick="console.log(playGame('Rock')) " class='p-btn'>Rock</button>
+            <button onclick="console.log(playGame('Papper')) " class='p-btn'>Papper</button>
+            <button onclick="console.log(playGame('Scissors')) " class='p-btn'>Scissor</button>
+        </div>
+        <p class="result c-res"></p>
+        <p class="moves"></p>
+        <p class="score"></p>
+        <button onclick="
+score.wins = 0;
+score.loses = 0;
+score.ties =0;
+localStorage.removeItem('score')
+document.querySelector('.moves')
+updateScore() 
+document.querySelector('.moves').innerHTML = ''; 
+document.querySelector('.result').innerHTML = ''; 
+
+" class="reserBtn">Reset Score</button>
+
+    </div>
+
+    <div class="next-page"><a href="https://github.com/Shaheensharafu?tab=overview&from=2024-02-01&to=2024-02-13">github</a></div>
+
+
+
+
+
+
+
+    <script src="main.js"> </script>
+</body>
+
+</html>
