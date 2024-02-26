@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", () =>{
         // Code to reset the game
         // Resetting the autoplay button text content
         autoplay.textContent = 'Auto-play';
+
+        if (autoplayIntervel) {
+            clearInterval(autoplayIntervel);
+            autoplayIntervel = null;
+        }
     });
 })
 
