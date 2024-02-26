@@ -1,3 +1,44 @@
+document.addEventListener("DOMContentLoaded", () =>{
+    const btns = document.querySelectorAll(".p-btn");
+    const autoplay = document.querySelector(".autoplay");
+    let autoplayIntervel;
+
+    btns.forEach((btn) =>{
+        btn.addEventListener('click',()=>{
+            const move = btn.textContent;
+            playGame(move);
+        })
+    })
+
+    autoplay.addEventListener('click',()=>{
+        if(autoplayIntervel){
+            clearInterval(autoplayIntervel)//if running
+            autoplayIntervel = null;
+            autoplay.textContent = 'resume-autoplay'
+        }else {
+            autoplay.textContent = 'Stop-autoplay'
+            autoplayIntervel = setInterval(()=>{
+                const moves = ['Rock', 'Papper', 'Scissors']
+                const randomIndex = Math.floor(Math.random()*moves.length)
+                const move = moves[randomIndex];
+                playGame(move);
+            },1000)
+        }
+    })
+
+
+    const resetBtn = document.querySelector(".reserBtn");
+    resetBtn.addEventListener('click', () => {
+        // Code to reset the game
+        // Resetting the autoplay button text content
+        autoplay.textContent = 'Auto-play';
+    });
+})
+
+
+
+
+
 let score = JSON.parse(localStorage.getItem('score')) || {
     wins:0,
     loses:0,
